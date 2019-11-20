@@ -1,0 +1,8 @@
+.*
+!.gitignore
+!.gitkeep
+!.prettierrc
+!.prettierignore
+!.vscode
+node_modules/
+public/

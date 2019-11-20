@@ -1,0 +1,8 @@
+<ul class="t-tags list-reset flex flex-wrap items-center">
+	{{ $url := .tagURL }}
+	{{ range .tags }}
+	<li class="t-tags:tag c-badge c-badge:neutral">
+		<a class="t-tags:link" href="{{ $url }}/{{ . | urlize | lower }}">{{. | upper}}</a>
+	</li>
+	{{ end }}
+</ul>

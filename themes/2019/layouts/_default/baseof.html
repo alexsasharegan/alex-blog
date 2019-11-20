@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en-us" }}">
+
+{{- partial "head.html" . -}}
+
+<body>
+
+<header>
+	{{ block "header" . }}
+	{{ partial "header.html" . }}
+	{{- end }}
+</header>
+
+<main class="contained">
+{{- block "content" . }}
+	<p>Add a content block here.</p>
+{{- end }}
+</main>
+
+{{ block "footer" . }}
+{{- partial "footer.html" . -}}
+{{ end }}
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<article class="Post">
+	<header>
+		<h1 class="Post__title flex items-center">
+			{{ if .Draft -}}
+			<span class="Post__title--icon flex">
+				{{ partial "icons/edit.svg" }}
+			</span>
+			{{- end }}
+			<a href="{{ .Permalink }}">
+				{{ .Title }}
+			</a>
+		</h1>
+	</header>
+
+
+	<p class="Post__summary">
+		{{- .Summary -}}
+		{{- if .Truncated }}&hellip;{{ end -}}
+	</p>
+
+	<footer class="Post__footer flex flex-col">
+		{{ $tagURL := printf "%s/tags" $.Site.BaseURL }}
+		{{ partial "tags" (dict "tags" .Params.tags "tagURL" $tagURL) }}
+		{{ partial "post-author" . }}
+	</footer>
+
+</article>

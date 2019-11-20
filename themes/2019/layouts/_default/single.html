@@ -1,0 +1,25 @@
+{{ define "content" }}
+
+<section class="t-single">
+  <article>
+    <header class="x-header">
+      <h1>{{ .Title }}</h1>
+
+      <div class="x-header:stats flex items-center">
+        {{ $tagURL := printf "%s/tags" $.Site.BaseURL }}
+        {{ partial "tags" (dict "tags" .Params.tags "tagURL" $tagURL) }}
+      </div>
+
+    </header>
+
+    <div class="x-body">
+      {{ .Content }}
+    </div>
+
+    <footer class="x-footer flex justify-center">
+      <a href="/posts">More Posts</a>
+    </footer>
+  </article>
+</section>
+
+{{ end }}

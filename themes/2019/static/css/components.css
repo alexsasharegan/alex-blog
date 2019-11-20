@@ -1,0 +1,49 @@
+/********************************* Templates *********************************/
+/*
+Templates use the `t-${name}` prefix and format.
+*/
+.t-single {
+  /* The single post template. */
+}
+
+.t-tags\:tag,
+.t-tags\:link {
+  color: var(--c-fg-3);
+  font-weight: normal;
+}
+
+/********************************* Components *********************************/
+/*
+Components use the `c-${name}` prefix and format.
+*/
+
+.c-card {
+  background-color: var(--c-fg);
+  border-radius: var(--radius-02);
+  border: 1px solid var(--c-sep-1);
+  padding: var(--sz-06);
+  /* box-shadow: var(--shadow-02); */
+}
+
+.c-badge {
+  font-size: 80%;
+  padding: 2px 5px;
+  border-radius: var(--radius-01);
+  background-color: var(--badge-bg-c, transparent);
+}
+
+.c-badge\:neutral {
+  --badge-bg-c: var(--c-fg-3);
+}
+
+/* .c-badge\:primary {
+  --badge-bg-c: var(--c-primary-100);
+}
+
+.c-badge\:secondary {
+  --badge-bg-c: var(--c-secondary-100);
+}
+
+.c-badge\:blue {
+  --badge-bg-c: var(--c-blue-100);
+} */

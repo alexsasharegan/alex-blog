@@ -1,0 +1,11 @@
+{{ define "content" -}}
+
+<ul class="list-reset">
+{{ range .Data.Pages }}
+	<li>
+		{{ partial "post-entry" . }}
+	</li>
+{{ end }}
+</ul>
+
+{{- end }}

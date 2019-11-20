@@ -1,0 +1,27 @@
+{{ define "hero" }}
+<section class="Hero Hero--text">
+	<div class="Hero__inner contained flex flex-col justify-center items-center">
+		<h1>{{ .Site.Title }}</h1>
+		<p class="Hero__inner--description">
+			{{ replace .Site.Params.description "\n" "<br/>" | safeHTML }}
+		</p>
+	</div>
+</section>
+{{ end }}
+
+{{ define "content" -}}
+
+{{ .Content }}
+
+<ul class="list-reset">
+{{ range (where .Data.Pages "Type" "!=" "about").GroupBy "Section" }}
+	{{ range .Pages }}
+	<li>
+		{{- partial "post-entry" . -}}
+	</li>
+	{{- end -}}
+{{- end }}
+</ul>
+
+{{- end }}
+

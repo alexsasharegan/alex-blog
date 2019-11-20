@@ -1,0 +1,24 @@
+baseURL = "https://alexregan.com/"
+languageCode = "en-us"
+title = "In Via Veritatem"
+
+theme = "2019"
+
+[taxonomies]
+	category = "categories"
+	series = "series"
+	tag = "tags"
+
+#################################### Params ####################################
+
+[params]
+	title = "In Via Veritatem"
+	description = """I've sworn off most social media and I'm searching for truth in a world of misinformation."""
+	images = ["/i/pmx.svg"]
+	keywords = []
+
+	# 1-2-3-4-5-6 mo-dy-hr-min-sec-yr
+	dateformat = "Jan 2, 2006"
+	logo = "/i/pmx.svg"
+	logoAlt = "/i/pmx-logo.svg"
+	logoText = "/i/pmx-text.svg"

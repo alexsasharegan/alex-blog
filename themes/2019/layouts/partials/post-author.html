@@ -1,0 +1,32 @@
+<div class="PostAuthor flex">
+	{{ with (index .Site.Params.author (default "" .Params.author)) }}
+	<img class="PostAuthor__avatar"
+		src="{{.avatars.sm}}"
+		alt="{{.name}}">
+	{{end}}
+
+	<div class="flex-col flex-grow">
+		{{ with (index .Site.Params.author (default "" .Params.author)) }}
+		<cite class="PostAuthor__cite flex items-center">
+			<span class="PostAuthor__cite--name">
+				{{- .name -}}
+			</span>
+			{{ with .email }}
+			<a href="mailto:{{.}}">
+				<span class="PostAuthor__cite--icon flex">
+					{{ partial "icons/mail.svg" . }}
+				</span>
+			</a>
+			{{ end }}
+		</cite>
+		{{end}}
+
+		<p class="PostAuthor__time">
+			<time datetime="{{ .Date.Format "2006-01-02" }}">
+				{{- .Date.Format (.Site.Params.dateformat | default "Jan 2, 2006") -}}
+			</time>
+			<span>&middot;</span>
+			<span>{{ .ReadingTime }} min read</span>
+		</p>
+	</div>
+</div>
